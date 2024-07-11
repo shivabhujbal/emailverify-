@@ -3,12 +3,12 @@ import { getAuth, RecaptchaVerifier, signInWithPhoneNumber, PhoneAuthProvider,se
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAaIe5Qq_lRIhpTRKe2X0mrvuT7V42-nLc",
-    authDomain: "otp-generation-bbbb8.firebaseapp.com",
-    projectId: "otp-generation-bbbb8",
-    storageBucket: "otp-generation-bbbb8.appspot.com",
-    messagingSenderId: "876320032358",
-    appId: "1:876320032358:web:a38354e7cd43b38b900fa7"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
   };
 
   const app = initializeApp(firebaseConfig);
