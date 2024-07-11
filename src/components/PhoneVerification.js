@@ -8,7 +8,6 @@ import 'react-phone-input-2/lib/style.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './FormComponent.css'; // Assuming this file contains your custom styles
-import img1 from '../images/img1.jpg';
 
 const PhoneVerification = () => {
   const [formData, setFormData] = useState({
@@ -154,10 +153,8 @@ const PhoneVerification = () => {
     <div className="container">
       <ToastContainer />
       <div className="row">
-        <div className="col-md-6 image-container">
-          <img src={img1} alt="Background" className="img-fluid" />
-        </div>
-        <div className="col-md-6 form-container">
+        
+        <div className="m-1">
           <div className="card">
             <div className="card-body">
               <h2 className="card-title">Phone Number Verification</h2>
@@ -189,20 +186,21 @@ const PhoneVerification = () => {
 {formErrors.email && <span className="error">{formErrors.email}</span>}
 
                 </div>
-                <div className="mb-3">
+                <div className="mb-3 ">
                   <PhoneInput
                     country={'in'}
                     value={phoneNumber}
                     onChange={setPhoneNumber}
                     placeholder='Enter Mobile'
-                    inputClass="form-control"
+                    inputClass="form-control "
+                    
                   />
 
                   {
                     !isotpVerified ? (
 
-                      <button type="button" className="btn btn-secondary mt-3" onClick={requestOtp}>
-                      Verify Mob. No
+                    <button type="btn button" className="btn btn-info mt-3 w-100" onClick={requestOtp}>
+                      Verify
                     </button>
 
                     ):(
@@ -239,13 +237,7 @@ const PhoneVerification = () => {
             Verify OTP
           </button>
         </div>
-        <div className="modal-footer">
-          {/* {showResendButton && (
-            <button className="btn btn-link" onClick={handleResendOtp}>
-              Resend OTP
-            </button>
-          )} */}
-        </div>
+
       </div>
     </div>
   </div>
