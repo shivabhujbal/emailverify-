@@ -139,6 +139,8 @@ const PhoneVerification = () => {
       otp: ''
     });
     setIsFormValid(true)
+    setFormErrors({})
+    setIsOtpVerified(false)
     setPhoneNumber('');
     toast.success('Form submitted successfully!');
   }else{
@@ -284,12 +286,12 @@ const PhoneVerification = () => {
                 <div id="recaptcha-container"></div>
             
                 {
-  !showSignIn  ? (
-    <button type="submit" className="btn btn-success mt-3 w-100" disabled={!isFormValid} onClick={handleSignIn}>
+  isotpVerified  ? (
+    <button type="submit" className="btn btn-success mt-3 w-100"  onClick={handleSignIn}>
       Sign In
     </button>
   ) : (
-    <button type="submit" className="btn btn-success mt-3 w-100" disabled={!isFormValid} onClick={handleSignIn}>
+    <button type="submit" className="btn btn-success mt-3 w-100" disabled onClick={handleSignIn}>
       Sign In
     </button>
   )
@@ -298,6 +300,8 @@ const PhoneVerification = () => {
               </form>
             </div>
           </div>
+          <p className='copy'> &copy; Shiva Bhujbal</p>
+
         </div>
       </div>
     </div>
